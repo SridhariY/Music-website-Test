@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+  background-image: linear-gradient(to bottom, rgba(255,25,0,0.4), rgba(0,0,0,0)), url("../images/bg-1.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+::-webkit-scrollbar{
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: aqua;
+}
+
+::-webkit-scrollbar-track{
+  background-color: #fff;
+}
+/* ########################### Navigation bar ########################### */
+nav{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  height: auto;
+}
+
+nav li{
+  list-style-type: none;
+  display: inline;
+  padding: 20px;      
+}
+
+nav li a{
+  color: #fff;
+}
+
+  /* ########################### Search box ################################ */
+.wrapper{
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  
+.search_box{
+  width: 50%;
+  position: relative;
+}
+  
+.search_box input[type="text"]{
+  width: 100%;
+  padding: 20px;
+  padding-right: 60px;
+  box-sizing: border-box;
+  background: rgba(0,0,0,0.3);
+  border: 2px solid #fff;
+  border-radius: 10px;
+  font-size: 18px;
+  color: #fff;
+  outline: none;
+}
+  
+.fa-search{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 25px;
+  color: #fff;
+  font-size: 25px;
+}
+  
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #fff;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #fff;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #fff;
+}
+
+.songs{
+  display: flex;
+  /* background-color: bisque; */
+  background-color: #eaeaea;
+  background-size: 20px 20px;
+  background-image: repeating-linear-gradient(45deg,rgba(0, 191, 255, 0.5),rgba(0, 191, 255, 0.5) 1px,transparent 1px,transparent 15px),
+                    repeating-linear-gradient(-45deg,rgba(255, 105, 180, 0.5),rgba(255, 105, 180, 0.5) 1px,transparent 1px,transparent 15px);
+  height: auto;
+  width: 100%;
+  margin-top: 20vh;
+  padding: 10px 0 10px 0;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; /*centering horizontally */
+  /* align-items: center;     centering vertically */
+}
+
+.telugu_songs{
+  height: auto;
+  border: 2px solid white;
+  /* background: linear-gradient(90deg, rgba(33,0,36,0.6173541963015647) 0%, rgba(9,121,56,1) 35%, rgba(0,62,255,0.829302987197724) 100%); */
+  list-style-type: none;
+  margin-right: 20px;
+  padding: 10px;
+  flex-basis: auto;
+}
+  
+@media screen and (max-width: 425px){
+  .search_box{
+    width: 45%;
+  }
+}
+
+@media only screen and (max-device-width: 1366px) {
+  body {
+    background-attachment: scroll;
+   }
+}
+
+/* uploads login modal box */
+
+.btn {
+	cursor: pointer;
+	background: #27ae60;
+	display: inline-block;
+	padding: .5em 1em;
+	color: #fff;
+	border-radius: 3px;
+  }
+  
+  .btn:hover,
+  .btn:focus {
+	background: #2ecc71;
+  }
+  
+  .btn:active {
+	background: #27ae60;
+	box-shadow: 0 1px 2px rgba(0,0,0, .2) inset;
+  }
+  
+  .btn--blue {
+	background: #2980b9;
+  }
+  
+  .btn--blue:hover,
+  .btn--blue:focus {
+	background: #3498db;
+  }
+  
+  .btn--blue:active {
+	background: #2980b9;
+  }
+  
+.modal {
+	opacity: 0;
+	visibility: hidden;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	text-align: left;
+	background: rgba(0,0,0, .9);
+	transition: opacity .25s ease;
+  }
+  
+  .modal__bg {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	cursor: pointer;
+  }
+  
+  .modal-state {
+	display: none;
+  }
+  
+  .modal-state:checked + .modal {
+	opacity: 1;
+	visibility: visible;
+  }
+  
+  .modal-state:checked + .modal .modal__inner {
+	top: 0;
+  }
+  
+  .modal__inner {
+	transition: top .25s ease;
+	position: absolute;
+	top: -20%;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 50%;
+	margin: auto;
+	overflow: auto;
+	background: #fff;
+	border-radius: 5px;
+	padding: 1em 2em;
+	height: 50%;
+  }
+  
+  .modal__close {
+	position: absolute;
+	right: 1em;
+	top: 1em;
+	width: 1.1em;
+	height: 1.1em;
+	cursor: pointer;
+  }
+  
+  .modal__close:after,
+  .modal__close:before {
+	content: '';
+	position: absolute;
+	width: 2px;
+	height: 1.5em;
+	background: #ccc;
+	display: block;
+	transform: rotate(45deg);
+	left: 50%;
+	margin: -3px 0 0 -1px;
+	top: 0;
+  }
+  
+  .modal__close:hover:after,
+  .modal__close:hover:before {
+	background: #aaa;
+  }
+  
+  .modal__close:before {
+	transform: rotate(-45deg);
+  }
+  
+  @media screen and (max-width: 768px) {
+	  
+	.modal__inner {
+	  width: 90%;
+	  height: 90%;
+	  box-sizing: border-box;
+	}
+  }
